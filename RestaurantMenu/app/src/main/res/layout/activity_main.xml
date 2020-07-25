@@ -8,6 +8,9 @@
     tools:context=".MainActivity">
 
     <GridView
+        android:columnWidth="64pt"
+        android:numColumns="auto_fit"
+        android:id="@+id/gvListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

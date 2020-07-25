@@ -6,7 +6,7 @@ class Food {
     var image: Int? = null
 
     constructor(nam: String, des: String, image: Int) {
-        this.name = name
+        this.name = nam
         this.des = des
         this.image = image
     }

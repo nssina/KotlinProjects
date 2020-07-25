@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RestaurantMenu</string>
+    <string name="coffee">Coffee</string>
 </resources>
