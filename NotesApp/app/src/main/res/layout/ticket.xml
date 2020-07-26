@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_margin="10pt"
+        android:background="@drawable/background_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_marginRight="10pt"
+                android:id="@+id/imageView"
+                android:layout_width="50pt"
+                android:layout_height="20pt"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/delete" />
+
+            <ImageView
+                android:layout_marginRight="10pt"
+                android:id="@+id/imageView2"
+                android:layout_width="50pt"
+                android:layout_height="20pt"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/edit" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
