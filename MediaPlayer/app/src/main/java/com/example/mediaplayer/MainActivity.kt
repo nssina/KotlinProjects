@@ -1,5 +1,6 @@
 package com.example.mediaplayer
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.song_ticket.view.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
     var listSongs = ArrayList<SongInfo>()
     var adapter: MySongAdapter? = null
+    var mp: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         adapter = MySongAdapter(listSongs)
         lsListSongs.adapter = adapter
+
+        var myTrack = MySongTrack()
+        myTrack.start()
     }
 
     inner class MySongAdapter: BaseAdapter {
@@ -44,9 +50,28 @@ class MainActivity : AppCompatActivity() {
             myView.tvAuthor.text = song.authorName
             myView.buPlay.setOnClickListener {
 
+                println("Button clicked")
+
                 //TODO: play song
 
+                if (myView.buPlay.text.equals("Stop")) {
+                    mp!!.stop()
+                    myView.buPlay.text = "Start"
+                } else {
 
+                    mp = MediaPlayer()
+
+                    try {
+                        mp!!.setDataSource(song.songURL)
+                        mp!!.prepare()
+                        mp!!.start()
+                        myView.buPlay.text = "Stop"
+                        sbProgress.max = mp!!.duration
+                        println("Started")
+                    } catch (ex: Exception) {
+                        println("has Error")
+                    }
+                }
             }
 
             return myView
@@ -63,6 +88,24 @@ class MainActivity : AppCompatActivity() {
         override fun getCount(): Int {
             return this.myListSong.size
         }
+    }
 
+    inner class MySongTrack: Thread() {
+
+        override fun run() {
+
+            while (true) {
+                try {
+                    Thread.sleep(1000)
+                } catch (ex: Exception) {
+
+                }
+                runOnUiThread {
+                    if (mp != null) {
+                        sbProgress.progress = mp!!.currentPosition
+                    }
+                }
+            }
+        }
     }
 }
