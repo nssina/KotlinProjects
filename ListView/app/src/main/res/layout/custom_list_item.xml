@@ -18,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@android:color/holo_red_light"
             android:orientation="vertical">
 
             <TextView
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Learn android app development"
-                android:textColor="#3F51B5"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <ImageView
