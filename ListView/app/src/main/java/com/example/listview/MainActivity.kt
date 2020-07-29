@@ -1,8 +1,9 @@
 package com.example.listview
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,5 +20,25 @@ class MainActivity : AppCompatActivity() {
         val adapter = CustomAdapter(this, items)
         val list = findViewById<ListView>(R.id.list_view)
         list.adapter = adapter
+        list.onItemClickListener = AdapterView.OnItemClickListener { parent, view, i, l ->
+            val alert = Dialog(this)
+            alert.setContentView(R.layout.custom_alert)
+
+            val title = alert.findViewById<TextView>(R.id.alert_title)
+            val desc = alert.findViewById<TextView>(R.id.alert_desc)
+            val image = alert.findViewById<ImageView>(R.id.alert_image)
+            val dismiss = alert.findViewById<Button>(R.id.alert_dismiss)
+
+            val item = adapter.getItem(i)
+            title.text = item!!.title
+            desc.text = item!!.desc
+            image.setImageResource(item!!.image)
+
+            alert.show()
+
+            dismiss.setOnClickListener {
+                alert.dismiss()
+            }
+        }
     }
 }
