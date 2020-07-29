@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:srcCompat="@drawable/background_image" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,31 +28,34 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/video_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_buttons"
             android:fontFamily="sans-serif-black"
+            android:onClick="playVideo"
             android:text="Video One"
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/video_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/custom_buttons"
             android:fontFamily="sans-serif-black"
+            android:onClick="playVideo"
             android:text="Video Two"
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/video_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/custom_buttons"
             android:fontFamily="sans-serif-black"
+            android:onClick="playVideo"
             android:text="Video Three"
             android:textColor="#FFFFFF" />
     </LinearLayout>
