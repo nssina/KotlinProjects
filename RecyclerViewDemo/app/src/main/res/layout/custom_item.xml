@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp">
+    android:layout_margin="20dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="10dp"
         app:cardElevation="14dp">
@@ -19,20 +19,23 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/item_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="218dp"
+                android:layout_margin="10dp"
                 android:layout_marginBottom="15dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/one" />
 
             <TextView
                 android:id="@+id/item_title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="76dp"
                 android:padding="5dp"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
